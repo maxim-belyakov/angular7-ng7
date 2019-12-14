@@ -8,13 +8,19 @@ import { DataService } from '../data.service';
 })
 export class HomeComponent implements OnInit {
 
+  users: Object;
+
   constructor(private data: DataService) { }
 
   ngOnInit() {
+    // это случится при ините
   }
 
   firstClick() {
-    this.data.firstClick();
+    this.data.getUsers().subscribe(data => {
+      this.users = data
+      console.log('this.users', this.users)
+    });
   }
 
 }
