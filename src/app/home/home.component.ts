@@ -13,10 +13,6 @@ export class HomeComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    // это случится при ините
-  }
-
-  firstClick() {
     this.data.getUsers().subscribe(data => {
       this.users = data
       console.log('this.users', this.users)
