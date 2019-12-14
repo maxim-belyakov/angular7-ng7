@@ -6,6 +6,7 @@ import { DataService } from '../data.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
 
   users: Object;
@@ -15,8 +16,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.data.getUsers().subscribe(data => {
       this.users = data
-      console.log('this.users', this.users)
-    });
+    }
+    );
   }
 
 }
